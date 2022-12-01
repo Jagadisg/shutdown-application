@@ -1,0 +1,15 @@
+from tkinter import *
+from obj import st
+stapp = Tk()
+stapp.title("ShutDown App")
+stapp.geometry("500x500")
+stapp.config(bg="Blue") 
+restart_button = Button(stapp,text="Restart",relief="raised",font=("times new roman",15,"normal"),cursor="plus",command=st.restart)
+restart_button.place(x=200,y=100,height=40,width=80)
+time = StringVar()
+rt_label = Label(stapp,text="Enter Time",font=("times new roman",10,"bold")).place(x=160,y=150,width=80)
+rt_input = Entry(stapp,textvariable=time,width=10).place(x=250,y=150,width=80)
+restart_time_button = Button(stapp,text="Restart Time",relief="raised",font=("times new roman",11,"normal"),cursor="plus",command= lambda: st.restarttime(time)).place(x=200,y=180,height=40,width=80)
+logout_button = Button(stapp,text="Logout",relief="raised",font=("times new roman",15,"normal"),cursor="plus",command=st.logout).place(x=200,y=230,height=40,width=80)
+shutdown_button = Button(stapp,text="Shutdown",relief="raised",font=("times new roman",15,"normal"),cursor="plus",command=st.shutdown).place(x=200,y=280,height=40,width=80)
+stapp.mainloop()
